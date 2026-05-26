@@ -1,0 +1,16 @@
+{
+  "name": "wavespeed_workflow",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.1",
+    "wavespeed": "^0.2.3"
+  }
+}
