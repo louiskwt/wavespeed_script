@@ -15,7 +15,7 @@ import fs from "node:fs";
 import {loadEnvFile} from "node:process";
 import path from "path";
 import {Client} from "wavespeed";
-import {downloadImage, loadPromptsFromCsv, resolveImage, sleep} from "./utils";
+import {downloadImage, loadPromptsFromCsv, resolveImage, sleep} from "./utils.js";
 
 loadEnvFile(); // Loads from the default './.env' path
 
@@ -99,7 +99,7 @@ async function main() {
 
       // Submit job
       console.log("  🚀  Submitting job…");
-      const result = await client.run("google/nano-banana-pro/edit", {
+      const result = await client.run("z-ai/glm-image/edit", {
         prompt: promptText,
         images: [imageValue],
         aspect_ratio: ASPECT_RATIO,
@@ -107,6 +107,7 @@ async function main() {
         output_format: OUTPUT_FORMAT,
         enable_sync_mode: false,
         enable_base64_output: false,
+        disable_safety_checker: true,
       });
 
       if (!result.outputs || result.outputs.length === 0) {
